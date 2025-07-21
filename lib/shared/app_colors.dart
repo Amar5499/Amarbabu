@@ -3,10 +3,24 @@ import 'package:flutter/material.dart';
 class AppColors {
   static const primary = Color(0xFFFFBE98);
   static const secondary = Color(0xFFB88AC4);
+
+  // Light theme
   static const background = Color(0xFFFFF8F2);
   static const textPrimary = Color(0xFF3B3B3B);
   static const textSecondary = Color(0xFF7A7A7A);
   static const white = Color(0xFFFFFFFF);
+  static const error = Color(0xFFD32F2F);
+  static const onError = Colors.white;
+
+  // Dark theme
+  static const darkBackground = Color(0xFF121212);
+  static const darkSurface = Color(0xFF1E1E1E);
+  static const darkOnBackground = Color(0xB3FFFFFF); // white70
+  static const darkOnSurface = Color(0xB3FFFFFF); // white70
+  static const darkError = Color(0xFFEF5350); // red.shade400
+  static const darkOnError = Colors.black;
+
+  // Shared
 
   static const backgroundGradient = LinearGradient(
     begin: Alignment.topLeft,

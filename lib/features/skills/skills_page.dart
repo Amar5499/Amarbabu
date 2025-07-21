@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:amar_portfolio/shared/app_colors.dart';
-import 'package:amar_portfolio/shared/app_text_styles.dart';
 
 @RoutePage()
 class SkillsPage extends StatelessWidget {
@@ -42,13 +40,15 @@ class SkillsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
         title: const Text('Skills'),
         centerTitle: true,
-        backgroundColor: AppColors.primary,
-        foregroundColor: Colors.white,
+        backgroundColor: theme.colorScheme.primary,
+        foregroundColor: theme.colorScheme.onPrimary,
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -58,9 +58,10 @@ class SkillsPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildSkillSection('Technical Skills', technicalSkills),
-                _buildSkillSection('Tools & Platforms', tools),
-                _buildSkillSection('Soft Skills', softSkills),
+                _buildSkillSection(
+                    context, 'Technical Skills', technicalSkills),
+                _buildSkillSection(context, 'Tools & Platforms', tools),
+                _buildSkillSection(context, 'Soft Skills', softSkills),
               ],
             ),
           ),
@@ -69,29 +70,33 @@ class SkillsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildSkillSection(String title, List<String> items) {
+  Widget _buildSkillSection(
+      BuildContext context, String title, List<String> items) {
+    final theme = Theme.of(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: AppTextStyles.headline),
+        Text(title, style: theme.textTheme.headlineMedium),
         const SizedBox(height: 12),
         Wrap(
           spacing: 12,
           runSpacing: 12,
           children: items.map((skill) {
             return Chip(
-              label: Text(skill, style: AppTextStyles.body),
-              backgroundColor: AppColors.white,
+              label: Text(skill, style: theme.textTheme.bodyMedium),
+              backgroundColor: theme.colorScheme.surface,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
-                side: BorderSide(color: AppColors.primary.withOpacity(0.5)),
+                side: BorderSide(
+                    color: theme.colorScheme.primary.withOpacity(0.5)),
               ),
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             );
           }).toList(),
         ),
         const SizedBox(height: 32),
-        Divider(color: Colors.grey.shade300),
+        Divider(color: theme.dividerColor.withOpacity(0.3)),
       ],
     );
   }

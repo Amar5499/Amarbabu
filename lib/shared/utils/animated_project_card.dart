@@ -1,4 +1,3 @@
-import 'package:amar_portfolio/shared/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedProjectCard extends StatefulWidget {
@@ -50,6 +49,7 @@ class _AnimatedProjectCardState extends State<AnimatedProjectCard>
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return FadeTransition(
       opacity: _fade,
       child: SlideTransition(
@@ -58,22 +58,22 @@ class _AnimatedProjectCardState extends State<AnimatedProjectCard>
           margin: const EdgeInsets.only(bottom: 24),
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: theme.colorScheme.surface,
             borderRadius: BorderRadius.circular(16),
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
-                color: Colors.black12,
+                color: theme.shadowColor.withOpacity(0.05),
                 blurRadius: 8,
-                offset: Offset(0, 4),
+                offset: const Offset(0, 4),
               ),
             ],
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(widget.title, style: AppTextStyles.headline),
+              Text(widget.title, style: theme.textTheme.titleLarge),
               const SizedBox(height: 8),
-              Text(widget.description, style: AppTextStyles.body),
+              Text(widget.description, style: theme.textTheme.bodyMedium),
             ],
           ),
         ),
