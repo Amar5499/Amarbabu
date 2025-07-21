@@ -1,4 +1,4 @@
-import 'package:amar_portfolio/shared/themes/theme_provider.dart';
+import 'package:amarbabu_portfolio/shared/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/routing/app_router.dart';

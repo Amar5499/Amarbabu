@@ -1,4 +1,4 @@
-import 'package:amar_portfolio/shared/utils/animated_section.dart';
+import 'package:amarbabu_portfolio/shared/utils/animated_section.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 

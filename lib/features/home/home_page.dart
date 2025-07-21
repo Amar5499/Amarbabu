@@ -4,16 +4,16 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'dart:html';
 import 'dart:math' as math;
-import 'package:amar_portfolio/core/routing/app_router.dart';
-import 'package:amar_portfolio/shared/app_assets.dart';
-import 'package:amar_portfolio/shared/app_colors.dart';
+import 'package:amarbabu_portfolio/core/routing/app_router.dart';
+import 'package:amarbabu_portfolio/shared/app_assets.dart';
+import 'package:amarbabu_portfolio/shared/app_colors.dart';
 
-@RoutePage()
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../shared/themes/theme_provider.dart';
 import '../../shared/widgets/typing_text.dart';
 
+@RoutePage()
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 

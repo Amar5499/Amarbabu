@@ -18,13 +18,13 @@ abstract class _$AppRouter extends RootStackRouter {
     AboutRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: AboutPage(),
+        child: const AboutPage(),
       );
     },
     ContactRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: ContactPage(),
+        child: const ContactPage(),
       );
     },
     HomeRoute.name: (routeData) {
@@ -36,13 +36,13 @@ abstract class _$AppRouter extends RootStackRouter {
     ProjectsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: ProjectsPage(),
+        child: const ProjectsPage(),
       );
     },
     SkillsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: SkillsPage(),
+        child: const SkillsPage(),
       );
     },
   };
