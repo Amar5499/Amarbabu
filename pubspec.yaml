@@ -33,9 +33,9 @@ dependencies:
   flutter_riverpod: ^2.4.0
   auto_route: ^7.8.4
   auto_route_generator: ^7.3.1
-  firebase_core: ^2.24.2
-  cloud_firestore: ^4.14.0
-  firebase_storage: ^11.6.0
+  firebase_core: ^3.15.2
+  cloud_firestore: ^5.6.12
+  firebase_storage: ^12.4.10
   url_launcher: ^6.3.1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -51,7 +51,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -68,6 +68,25 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+
+  assets:
+    - assets/images/
+    - assets/docs/
+
+
+  fonts:
+    - family: SourceCodePro
+      fonts:
+        - asset: assets/fonts/source_code/SourceCodePro-Black.ttf
+        - asset: assets/fonts/source_code/SourceCodePro-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/source_code/SourceCodePro-Light.ttf
+          weight: 300
+        - asset: assets/fonts/source_code/SourceCodePro-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/source_code/SourceCodePro-Italic.ttf
+          style: italic
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

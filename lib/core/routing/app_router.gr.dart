@@ -30,7 +30,7 @@ abstract class _$AppRouter extends RootStackRouter {
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: HomePage(),
+        child: const HomePage(),
       );
     },
     ProjectsRoute.name: (routeData) {
