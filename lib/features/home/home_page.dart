@@ -3,13 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'dart:html';
-import 'dart:math' as math;
 import 'package:amarbabu_portfolio/core/routing/app_router.dart';
 import 'package:amarbabu_portfolio/shared/app_assets.dart';
 import 'package:amarbabu_portfolio/shared/app_colors.dart';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../shared/themes/theme_provider.dart';
 import '../../shared/widgets/typing_text.dart';
 
@@ -26,9 +23,10 @@ class _HomePageState extends ConsumerState<HomePage>
   late AnimationController _controller;
 
   void _downloadResume() {
-    final anchor = AnchorElement(href: 'assets/docs/Amarbabu-29:04:2025.pdf')
-      ..setAttribute('download', 'Amarbabu_Resume.pdf')
-      ..click();
+    final anchor =
+        AnchorElement(href: 'assets/docs/AMARBABU-T-Resume-20251024.pdf')
+          ..setAttribute('download', 'Amarbabu_Resume.pdf')
+          ..click();
   }
 
   @override
@@ -48,8 +46,8 @@ class _HomePageState extends ConsumerState<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    final themeMode = ref.watch(themeModeProvider);
     final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -58,6 +56,9 @@ class _HomePageState extends ConsumerState<HomePage>
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: IconButton(
+              color: isDark
+                  ? AppColors.darkTextSecondary
+                  : AppColors.lightTextSecondary,
               icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
               tooltip: 'Toggle Theme',
               onPressed: () {
@@ -77,138 +78,93 @@ class _HomePageState extends ConsumerState<HomePage>
             )
           : null,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: Stack(
-        children: [
-          Align(
-            alignment: Alignment.bottomCenter,
+      body: Center(
+        child: ScrollConfiguration(
+          behavior: const ScrollBehavior().copyWith(scrollbars: false),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 48),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                AnimatedBuilder(
-                  animation: _controller,
-                  builder: (context, child) {
-                    return ClipPath(
-                      clipper: CurvedWaveClipper(
-                        reverse: false,
-                        phase: _controller.value * 2 * math.pi,
+                // Profile image
+                Container(
+                  width: 150,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Theme.of(context).colorScheme.primary,
+                      width: 2.5,
+                    ),
+                  ),
+                  child: CircleAvatar(
+                    radius: 75,
+                    backgroundColor: Colors.white,
+                    child: ClipOval(
+                      child: Image.asset(
+                        isDark ? AppAssets.profileDark : AppAssets.profileLight,
+                        fit: BoxFit.cover,
                       ),
-                      child: Container(
-                        height: 80,
-                        width: double.infinity,
-                        color: Theme.of(context)
-                            .colorScheme
-                            .primary
-                            .withOpacity(0.2),
-                      ),
-                    );
-                  },
+                    ),
+                  ),
+                ).animate().scale(duration: 600.ms).fadeIn(),
+                const SizedBox(height: 40),
+
+                // Typing name
+                TypingText(
+                  text: "Hi, I'm Amarbabu T",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
                 ),
-                AnimatedBuilder(
-                  animation: _controller,
-                  builder: (context, child) {
-                    return ClipPath(
-                      clipper: CurvedWaveClipper(
-                        reverse: false,
-                        phase: _controller.value * 2 * math.pi,
-                      ),
-                      child: Container(
-                        height: 80,
-                        width: double.infinity,
-                        color: Theme.of(context)
-                            .colorScheme
-                            .primary
-                            .withOpacity(0.1),
-                      ),
-                    );
-                  },
-                ),
-                AnimatedBuilder(
-                  animation: _controller,
-                  builder: (context, child) {
-                    return ClipPath(
-                      clipper: CurvedWaveClipper(
-                        reverse: false,
-                        phase: _controller.value * 2 * math.pi,
-                      ),
-                      child: Container(
-                        height: 80,
-                        width: double.infinity,
-                        color: Theme.of(context)
-                            .colorScheme
-                            .primary
-                            .withOpacity(0.05),
-                      ),
-                    );
-                  },
-                ),
+                const SizedBox(height: 24),
+
+                // Description
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 800),
+                  child: Text(
+                    'Mobile App Developer | 3+ Years of Experience\n'
+                    'Specialized in Flutter & Dart — focused on building scalable, high-performance mobile apps.\n'
+                    'Proficient in BLoC, Riverpod & GetX; experienced with Firebase, REST, and GraphQL APIs.\n'
+                    'Also skilled in Next.js and React for modern, responsive web applications.\n'
+                    'Passionate about clean architecture, performance optimization, and elegant UI/UX design.',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium
+                        ?.copyWith(height: 1.6),
+                  ),
+                )
+                    .animate()
+                    .fadeIn(delay: 400.ms)
+                    .slideY(begin: 0.2, duration: 600.ms)
+                    .then(delay: 300.ms),
+
+                const SizedBox(height: 50),
+
+                // Navigation buttons
+                Wrap(
+                  spacing: 16,
+                  runSpacing: 16,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    _navButton(Icons.person, 'About',
+                        () => context.router.push(const AboutRoute())),
+                    _navButton(Icons.code, 'Projects',
+                        () => context.router.push(const ProjectsRoute())),
+                    _navButton(Icons.star, 'Skills',
+                        () => context.router.push(const SkillsRoute())),
+                    _navButton(Icons.mail, 'Contact',
+                        () => context.router.push(const ContactRoute())),
+                  ],
+                ).animate().slideY(begin: 0.3, duration: 500.ms).fadeIn(),
+
+                const SizedBox(height: 80),
               ],
             ),
           ),
-          Center(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: 130,
-                    height: 130,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: Theme.of(context).colorScheme.primary,
-                        width: 2,
-                      ),
-                    ),
-                    child: CircleAvatar(
-                      radius: 66,
-                      backgroundColor: Colors.white,
-                      child: ClipOval(
-                        child: Image.asset(
-                          AppAssets.profile,
-                          width: 120,
-                          height: 120,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                  ).animate().scale(duration: 500.ms).fadeIn(),
-                  const SizedBox(height: 24),
-                  TypingText(
-                    text: "Hi, I'm Amarbabu T",
-                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                          color: Theme.of(context).colorScheme.onBackground,
-                        ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Cross-platform Flutter Developer | 2+ years\n'
-                    'Skilled in Riverpod, Bloc, GetX, Firebase, Stripe, REST/GraphQL APIs & scalable architecture',
-                    style: Theme.of(context).textTheme.titleMedium,
-                    textAlign: TextAlign.center,
-                  ).animate().fadeIn(delay: 500.ms),
-                  const SizedBox(height: 30),
-                  Wrap(
-                    spacing: 12,
-                    runSpacing: 12,
-                    alignment: WrapAlignment.center,
-                    children: [
-                      _navButton(Icons.person, 'About',
-                          () => context.router.push(const AboutRoute())),
-                      _navButton(Icons.code, 'Projects',
-                          () => context.router.push(const ProjectsRoute())),
-                      _navButton(Icons.star, 'Skills',
-                          () => context.router.push(const SkillsRoute())),
-                      _navButton(Icons.mail, 'Contact',
-                          () => context.router.push(const ContactRoute())),
-                    ],
-                  ).animate().slideY(begin: 0.3, duration: 500.ms).fadeIn(),
-                  const SizedBox(height: 60),
-                ],
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -216,54 +172,16 @@ class _HomePageState extends ConsumerState<HomePage>
   Widget _navButton(IconData icon, String label, void Function() onTap) {
     return ElevatedButton.icon(
       onPressed: onTap,
-      icon: Icon(icon),
-      label: Text(label),
+      icon: Icon(icon, size: 22),
+      label: Text(label, style: const TextStyle(fontSize: 16)),
       style: ElevatedButton.styleFrom(
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Theme.of(context).colorScheme.onPrimary,
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
       ),
     );
   }
-}
-
-class CurvedWaveClipper extends CustomClipper<Path> {
-  final bool reverse;
-  final double phase;
-  CurvedWaveClipper({this.reverse = false, this.phase = 0});
-
-  @override
-  Path getClip(Size size) {
-    final path = Path();
-    const double amplitude = 10;
-    const double frequency = 2;
-
-    if (!reverse) {
-      path.moveTo(0, size.height / 2);
-      for (double x = 0; x <= size.width; x++) {
-        double y = size.height / 2 +
-            amplitude *
-                math.sin((2 * math.pi * frequency * x / size.width) + phase);
-        path.lineTo(x, y);
-      }
-      path.lineTo(size.width, size.height);
-      path.lineTo(0, size.height);
-    } else {
-      path.moveTo(0, size.height / 2);
-      for (double x = 0; x <= size.width; x++) {
-        double y = size.height / 2 -
-            amplitude *
-                math.sin((2 * math.pi * frequency * x / size.width) + phase);
-        path.lineTo(x, y);
-      }
-      path.lineTo(size.width, 0);
-      path.lineTo(0, 0);
-    }
-
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => true;
 }

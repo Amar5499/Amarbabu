@@ -1,33 +1,51 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const primary = Color(0xFFFFBE98);
-  static const secondary = Color(0xFFB88AC4);
+  // --------------------
+  // Core Colors
+  // --------------------
+  static const Color primary = Color(0xFF4A90E2); // Elegant deep blue
+  static const Color secondary = Color(0xFF7ED6DF); // Soft mint
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color error = Color(0xFFE26D5C);
+  static const Color onError = white;
 
-  // Light theme
-  static const background = Color(0xFFFFF8F2);
-  static const textPrimary = Color(0xFF3B3B3B);
-  static const textSecondary = Color(0xFF7A7A7A);
-  static const white = Color(0xFFFFFFFF);
-  static const error = Color(0xFFD32F2F);
-  static const onError = Colors.white;
+  // --------------------
+  // Light Theme Colors
+  // --------------------
+  static const Color lightBackground = Color(0xFFFFFCF7); // Bright warm white
+  static const Color lightSurface = Color(0xFFFFFFFF);
+  static const Color lightTextPrimary = Color(0xFF2C2C2C); // Deep neutral gray
+  static const Color lightTextSecondary = Color(0xFF696969); // Muted gray
 
-  // Dark theme
-  static const darkBackground = Color(0xFF121212);
-  static const darkSurface = Color(0xFF1E1E1E);
-  static const darkOnBackground = Color(0xB3FFFFFF); // white70
-  static const darkOnSurface = Color(0xB3FFFFFF); // white70
-  static const darkError = Color(0xFFEF5350); // red.shade400
-  static const darkOnError = Colors.black;
+  // --------------------
+  // Dark Theme Colors
+  // --------------------
+  static const Color darkBackground = Color(0xFF000000);
+  static const Color darkSurface = Color(0xFF2A2A2A);
+  static const Color darkTextPrimary = Color(0xFFEDEDED);
+  static const Color darkTextSecondary = Color(0xFFCFCFCF);
+  static const Color darkError = Color(0xFFFF8A80);
+  static const Color darkOnError = Colors.black;
 
-  // Shared
-
-  static const backgroundGradient = LinearGradient(
+  // --------------------
+  // Gradients
+  // --------------------
+  static const LinearGradient backgroundGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: [
-      Color(0xFFFFE7D6),
-      Color(0xFFFFFFFF),
+      Color(0xFFE4F9F5), // Pale mint blue
+      Color(0xFFD6E6F2), // Soft light blue
+    ],
+  );
+
+  static const LinearGradient primaryGradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      primary,
+      secondary,
     ],
   );
 }

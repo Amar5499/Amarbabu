@@ -5,7 +5,7 @@ final lightTheme = ThemeData(
   fontFamily: 'SourceCodePro',
   brightness: Brightness.light,
   useMaterial3: true,
-  scaffoldBackgroundColor: AppColors.background,
+  scaffoldBackgroundColor: AppColors.lightBackground,
   colorScheme: ColorScheme(
     brightness: Brightness.light,
     primary: AppColors.primary,
@@ -14,25 +14,25 @@ final lightTheme = ThemeData(
     onSecondary: AppColors.white,
     error: AppColors.error,
     onError: AppColors.white,
-    background: AppColors.background,
-    onBackground: AppColors.textPrimary,
-    surface: AppColors.background,
-    onSurface: AppColors.textPrimary,
+    background: AppColors.lightBackground,
+    onBackground: AppColors.lightTextPrimary,
+    surface: AppColors.lightBackground,
+    onSurface: AppColors.lightTextPrimary,
   ),
   textTheme: const TextTheme(
     headlineMedium: TextStyle(
       fontSize: 28,
       fontWeight: FontWeight.w700,
-      color: AppColors.textPrimary,
+      color: AppColors.lightTextPrimary,
     ),
     titleMedium: TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w400,
-      color: AppColors.textSecondary,
+      color: AppColors.lightTextSecondary,
     ),
     bodyMedium: TextStyle(
       fontSize: 16,
-      color: AppColors.textPrimary,
+      color: AppColors.lightTextPrimary,
     ),
   ),
 );

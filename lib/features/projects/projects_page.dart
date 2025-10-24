@@ -8,34 +8,49 @@ class ProjectsPage extends StatelessWidget {
 
   final List<Map<String, String>> projects = const [
     {
+      'title': 'Flutter E-commerce App (Shopify Integration)',
+      'description':
+          'Developed a full-featured e-commerce application integrated with Shopify Storefront GraphQL APIs. Implemented product catalog, wishlist, order history, and dynamic filtering using Riverpod and MVVM Clean Architecture for scalability and maintainability.',
+    },
+    {
+      'title': 'Observation & Task Management App',
+      'description':
+          'Enhanced an offline-first field data collection app with checklist-based observations, dynamic forms, image capture, and network-aware syncing. Utilized Flutter, BLoC/Cubit, Drift, Sembast, and get_it for local persistence and modular Clean Architecture.',
+    },
+    {
       'title': 'School Bus Management App',
       'description':
-          'Led UI development for a school transport app with Firebase-based real-time notifications and seamless app distribution.'
+          'Built staff and parent Flutter apps with RFID-based check-in/out, GPS live tracking, and FCM notifications. Integrated Firebase, OpenStreetMap, and Telpo devices to ensure real-time monitoring and student safety, managed via scalable Riverpod state management.',
     },
     {
-      'title': 'Multi-app E-commerce Platform',
+      'title': 'Multi-role E-commerce Platform',
       'description':
-          'Built Flutter UIs for User, Driver, and Store apps. Integrated Stripe, Firebase, and Medusa APIs. Used GetX and Riverpod.'
+          'Developed three role-specific apps (User, Driver, Store) using Flutter, Firebase, Stripe, and Medusa API. Implemented real-time order updates, secure authentication, and responsive UIs using Riverpod and GetX.',
     },
     {
-      'title': 'Bookezy Booking App',
+      'title': 'Bookezy – Service Booking App',
       'description':
-          'Designed intuitive UI and built user authentication, profile, booking & scheduling with custom APIs and Riverpod.'
+          'Led UI/UX design and implementation for a Flutter app enabling real-time service booking, secure authentication, and profile management through custom REST APIs and Riverpod.',
     },
     {
-      'title': 'ShopLite Web App',
+      'title': 'ShopLite – E-commerce Web App',
       'description':
-          'Created a high-performance e-commerce site using React + Vite. Integrated REST APIs, Redux, Firebase, and deployed on AWS.'
+          'Created a responsive web platform using React (Next.js), Vite, Redux, and Firebase. Integrated REST APIs for product and order management and deployed the solution on AWS S3 with modular architecture for maintainability.',
     },
     {
-      'title': 'GPA App',
+      'title': 'AI-Powered Grammar Correction App',
       'description':
-          'Developed a Flutter app for Grama Panchayath to help citizens connect with local governance. Firebase backend.'
+          'Designed a multimodal Flutter application leveraging the Gemini API for real-time grammar correction. Integrated speech-to-text, text-to-speech, and camera preview for an immersive, accessible user experience.',
     },
     {
-      'title': 'Transcriber App',
+      'title': 'Cross-Platform Chat & Location App',
       'description':
-          'Real-time grammar correction using Gemini API. Used camera preview, speech-to-text, and TTS playback for interaction.'
+          'Developed a feature-rich Flutter chat application with Firebase push notifications, local SQLite storage, and QR-based device token exchange. Added bilingual support (English/Arabic) and geofencing using Google Maps for location-aware interactions.',
+    },
+    {
+      'title': 'Flutter Responsive Kit (Open Source)',
+      'description':
+          'Published a Flutter package providing responsive layout helpers and utilities for adaptive UI design across mobile, tablet, and desktop platforms. Focused on developer experience with clean APIs and comprehensive documentation.',
     },
   ];
 
@@ -52,17 +67,20 @@ class ProjectsPage extends StatelessWidget {
         foregroundColor: theme.colorScheme.onPrimary,
       ),
       body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 1000),
-            child: Column(
-              children: List.generate(
-                projects.length,
-                (index) => AnimatedProjectCard(
-                  title: projects[index]['title']!,
-                  description: projects[index]['description']!,
-                  delay: index * 150,
+        child: ScrollConfiguration(
+          behavior: const ScrollBehavior().copyWith(scrollbars: false),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 1000),
+              child: Column(
+                children: List.generate(
+                  projects.length,
+                  (index) => AnimatedProjectCard(
+                    title: projects[index]['title']!,
+                    description: projects[index]['description']!,
+                    delay: index * 150,
+                  ),
                 ),
               ),
             ),

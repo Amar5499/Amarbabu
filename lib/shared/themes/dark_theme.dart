@@ -15,24 +15,24 @@ final darkTheme = ThemeData(
     error: AppColors.darkError,
     onError: AppColors.darkOnError,
     background: AppColors.darkBackground,
-    onBackground: AppColors.darkOnBackground,
+    onBackground: AppColors.darkBackground,
     surface: AppColors.darkSurface,
-    onSurface: AppColors.darkOnSurface,
+    onSurface: AppColors.darkSurface,
   ),
   textTheme: const TextTheme(
     headlineMedium: TextStyle(
       fontSize: 28,
       fontWeight: FontWeight.w700,
-      color: AppColors.darkOnBackground,
+      color: AppColors.darkTextPrimary,
     ),
     titleMedium: TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w400,
-      color: AppColors.darkOnSurface,
+      color: AppColors.darkTextSecondary,
     ),
     bodyMedium: TextStyle(
       fontSize: 16,
-      color: AppColors.darkOnBackground,
+      color: AppColors.darkTextPrimary,
     ),
   ),
 );
