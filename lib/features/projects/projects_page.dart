@@ -2,6 +2,8 @@ import 'package:amarbabu_portfolio/shared/utils/animated_project_card.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 
+import '../../shared/app_colors.dart';
+
 @RoutePage()
 class ProjectsPage extends StatelessWidget {
   const ProjectsPage({super.key});
@@ -61,7 +63,11 @@ class ProjectsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
-        title: const Text('Projects'),
+        title: Text(
+          'Projects',
+          style: theme.textTheme.headlineMedium
+              ?.copyWith(fontWeight: FontWeight.bold, color: AppColors.white),
+        ),
         centerTitle: true,
         backgroundColor: theme.colorScheme.primary,
         foregroundColor: theme.colorScheme.onPrimary,

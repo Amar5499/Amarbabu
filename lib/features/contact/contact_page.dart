@@ -1,3 +1,4 @@
+import 'package:amarbabu_portfolio/shared/app_colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
@@ -134,7 +135,11 @@ class _ContactPageState extends State<ContactPage> {
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
-        title: const Text('Contact'),
+        title: Text(
+          'Contact',
+          style: theme.textTheme.headlineMedium
+              ?.copyWith(fontWeight: FontWeight.bold, color: AppColors.white),
+        ),
         centerTitle: true,
         backgroundColor: theme.colorScheme.primary,
         foregroundColor: theme.colorScheme.onPrimary,
@@ -190,7 +195,7 @@ class _ContactPageState extends State<ContactPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Send a Message',
-                                style: theme.textTheme.headlineSmall
+                                style: theme.textTheme.headlineMedium
                                     ?.copyWith(fontWeight: FontWeight.bold))
                             .animate()
                             .fadeIn(duration: 400.ms),
@@ -209,9 +214,10 @@ class _ContactPageState extends State<ContactPage> {
                                 children: [
                                   TextFormField(
                                     controller: _nameController,
-                                    decoration: const InputDecoration(
+                                    decoration: InputDecoration(
                                       labelText: 'Your Name',
-                                      border: OutlineInputBorder(),
+                                      labelStyle: theme.textTheme.bodyMedium,
+                                      border: const OutlineInputBorder(),
                                     ),
                                     validator: (value) =>
                                         value == null || value.isEmpty
@@ -222,9 +228,10 @@ class _ContactPageState extends State<ContactPage> {
                                   TextFormField(
                                     controller: _emailController,
                                     keyboardType: TextInputType.emailAddress,
-                                    decoration: const InputDecoration(
+                                    decoration: InputDecoration(
                                       labelText: 'Your Email',
-                                      border: OutlineInputBorder(),
+                                      labelStyle: theme.textTheme.bodyMedium,
+                                      border: const OutlineInputBorder(),
                                     ),
                                     validator: (value) {
                                       if (value == null || value.isEmpty) {
@@ -240,10 +247,13 @@ class _ContactPageState extends State<ContactPage> {
                                   TextFormField(
                                     controller: _messageController,
                                     maxLines: 5,
-                                    decoration: const InputDecoration(
+                                    decoration: InputDecoration(
                                       labelText: 'Message',
+                                      labelStyle: theme.textTheme.bodyMedium,
                                       alignLabelWithHint: true,
-                                      border: OutlineInputBorder(),
+                                      border: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: AppColors.primary)),
                                     ),
                                     validator: (value) =>
                                         value == null || value.isEmpty

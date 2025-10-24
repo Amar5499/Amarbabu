@@ -1,3 +1,4 @@
+import 'package:amarbabu_portfolio/shared/app_colors.dart';
 import 'package:amarbabu_portfolio/shared/utils/animated_section.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
@@ -13,7 +14,11 @@ class AboutPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
-        title: const Text('About Me'),
+        title: Text(
+          'About Me',
+          style: theme.textTheme.headlineMedium
+              ?.copyWith(fontWeight: FontWeight.bold, color: AppColors.white),
+        ),
         centerTitle: true,
         backgroundColor: theme.colorScheme.primary,
         foregroundColor: theme.colorScheme.onPrimary,
@@ -65,7 +70,7 @@ class AboutPage extends StatelessWidget {
                           context,
                           title:
                               'Flutter Developer Consultant (Freelance) – CodeScribo Technologies',
-                          duration: 'May 2025 – Present',
+                          duration: 'May 2025 – Sep 2025',
                           highlights: [
                             'Developed a full-featured Shopify e-commerce app using Flutter, Riverpod, GraphQL, and Clean Architecture.',
                             'Enhanced a field Observation & Task Management app with offline-first support using Drift, Sembast, and get_it.',
@@ -116,7 +121,7 @@ class AboutPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title,
-            style: theme.textTheme.headlineSmall
+            style: theme.textTheme.headlineMedium
                 ?.copyWith(fontWeight: FontWeight.bold)),
         const SizedBox(height: 12),
         Text(content, style: theme.textTheme.bodyMedium?.copyWith(height: 1.5)),
