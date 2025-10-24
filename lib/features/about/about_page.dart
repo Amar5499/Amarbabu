@@ -65,7 +65,7 @@ class AboutPage extends StatelessWidget {
                           context,
                           title:
                               'Flutter Developer Consultant (Freelance) – CodeScribo Technologies',
-                          duration: 'May 2025 – Present',
+                          duration: 'May 2025 – Sep 2025',
                           highlights: [
                             'Developed a full-featured Shopify e-commerce app using Flutter, Riverpod, GraphQL, and Clean Architecture.',
                             'Enhanced a field Observation & Task Management app with offline-first support using Drift, Sembast, and get_it.',
@@ -116,7 +116,7 @@ class AboutPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title,
-            style: theme.textTheme.headlineSmall
+            style: theme.textTheme.headlineMedium
                 ?.copyWith(fontWeight: FontWeight.bold)),
         const SizedBox(height: 12),
         Text(content, style: theme.textTheme.bodyMedium?.copyWith(height: 1.5)),

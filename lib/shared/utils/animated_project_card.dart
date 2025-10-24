@@ -71,7 +71,7 @@ class _AnimatedProjectCardState extends State<AnimatedProjectCard>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(widget.title, style: theme.textTheme.titleLarge),
+              Text(widget.title, style: theme.textTheme.titleMedium),
               const SizedBox(height: 8),
               Text(widget.description, style: theme.textTheme.bodyMedium),
             ],
