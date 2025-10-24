@@ -135,7 +135,11 @@ class _ContactPageState extends State<ContactPage> {
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
-        title: const Text('Contact'),
+        title: Text(
+          'Contact',
+          style: theme.textTheme.headlineMedium
+              ?.copyWith(fontWeight: FontWeight.bold, color: AppColors.white),
+        ),
         centerTitle: true,
         backgroundColor: theme.colorScheme.primary,
         foregroundColor: theme.colorScheme.onPrimary,

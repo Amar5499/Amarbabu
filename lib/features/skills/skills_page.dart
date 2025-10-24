@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import '../../shared/app_colors.dart';
+
 @RoutePage()
 class SkillsPage extends StatelessWidget {
   const SkillsPage({super.key});
@@ -68,7 +70,11 @@ class SkillsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
-        title: const Text('Skills'),
+        title: Text(
+          'Skills',
+          style: theme.textTheme.headlineMedium
+              ?.copyWith(fontWeight: FontWeight.bold, color: AppColors.white),
+        ),
         centerTitle: true,
         backgroundColor: theme.colorScheme.primary,
         foregroundColor: theme.colorScheme.onPrimary,
