@@ -24,7 +24,7 @@ class _HomePageState extends ConsumerState<HomePage>
 
   void _downloadResume() {
     final anchor =
-        AnchorElement(href: 'assets/docs/AMARBABU-T-Resume-20251024.pdf')
+        AnchorElement(href: 'assets/docs/Amarbabu-T- Flutter Jan.pdf')
           ..setAttribute('download', 'Amarbabu_Resume.pdf')
           ..click();
   }
@@ -176,7 +176,7 @@ class _HomePageState extends ConsumerState<HomePage>
       label: Text(label, style: const TextStyle(fontSize: 16)),
       style: ElevatedButton.styleFrom(
         backgroundColor: Theme.of(context).colorScheme.primary,
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        foregroundColor: AppColors.darkTextPrimary,
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),

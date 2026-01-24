@@ -12,55 +12,54 @@ class SkillsPage extends StatelessWidget {
     'Dart',
     'JavaScript',
     'TypeScript',
+    'SQL', // Added for SQLite/Drift expertise
     'HTML',
     'CSS',
   ];
 
   final List<String> frameworks = const [
-    'Flutter',
+    'Flutter (Android, iOS, Web)',
+    'Flutter Bloc / Cubit', // Promoted based on Insasoft role
+    'Riverpod',
+    'Clean Architecture',
     'Next.js',
     'React.js',
-    'Riverpod',
-    'BLoC / Cubit',
     'GetX',
-    'Redux',
-    'MVVM',
-    'Clean Architecture',
+    'MVC / MVVM',
   ];
 
   final List<String> backendAndCloud = const [
-    'Firebase (Auth, Firestore, FCM, Realtime DB)',
-    'REST APIs',
-    'GraphQL APIs',
-    'Stripe Integration',
+    'Firebase (Auth, Firestore, FCM, Storage)',
+    'Chopper & Retrofit (REST)', // Added from Insasoft stack
+    'Ably Real-time', // Added from Insasoft stack
+    'Stripe & Razorpay Integration', // Added specific gateways
+    'GraphQL APIs (Shopify)',
+    'Google Maps SDK & Geofencing', // Added from GPA project
+    'Drift, Sembast & SQLite', // Consolidated local DBs
     'AWS (S3)',
     'Medusa API',
-    'Gemini API',
-    'Drift (Local DB)',
-    'Sembast (Offline Storage)',
+    'Gemini AI API',
   ];
 
   final List<String> toolsAndPlatforms = const [
     'Git & GitHub',
     'Postman',
+    'Play Store & App Store Deployment', // Added to show release experience
+    'TestFlight & Firebase Distribution',
     'Figma',
     'VS Code',
-    'Android Studio',
-    'Xcode',
-    'TestFlight',
-    'Firebase App Distribution',
-    'Jira',
+    'Xcode & Android Studio',
+    'Jira & Agile Boards',
   ];
 
   final List<String> softSkills = const [
-    'Clean code practices',
-    'Critical thinking & problem-solving',
-    'Client communication',
-    'Team collaboration',
-    'Agile methodology',
-    'Leadership & ownership',
-    'Adaptability & fast learning',
-    'Attention to detail',
+    'Technical Leadership', // Added based on your senior role
+    'Clean Code & SOLID Principles',
+    'Critical Thinking & Problem-solving',
+    'Client Communication (Freelance)',
+    'Team Collaboration',
+    'Fast Learning & Adaptability',
+    'Attention to Detail',
   ];
 
   @override
@@ -101,7 +100,7 @@ class SkillsPage extends StatelessWidget {
                 ),
                 _animatedSkillSection(
                   context,
-                  'Backend & Cloud',
+                  'Backend, Real-time & Cloud',
                   backendAndCloud,
                   delay: 300,
                 ),
