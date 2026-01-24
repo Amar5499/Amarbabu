@@ -10,49 +10,49 @@ class ProjectsPage extends StatelessWidget {
 
   final List<Map<String, String>> projects = const [
     {
+      'title': 'Hub Business Center – Floor Management App',
+      'description':
+          'Developed a complex multi-role tenant management system at Insasoft Technologies. Features include real-time seat/floor management using Ably, Bloc-driven state handling, and Chopper-based REST services. Built with Clean Architecture to support Android, iOS, and Web platforms.',
+    },
+    {
+      'title': 'Mr Coach Pro – Fitness & Coaching Platform',
+      'description':
+          'Enhanced a professional coaching platform with Bloc-based state management. Integrated Razorpay payment gateway for seamless subscription handling and Firebase Cloud Messaging for real-time alerts. Successfully managed the end-to-end release process on the Google Play Store.',
+    },
+    {
+      'title': 'GPA – Gram Panchayath App',
+      'description':
+          'A citizen-centric Android application featuring a Google Maps integration with a 2km geofencing radius to highlight local activities. Built using Flutter and Firebase, following the MVC pattern with Riverpod for efficient state management.',
+    },
+    {
       'title': 'Flutter E-commerce App (Shopify Integration)',
       'description':
-          'Developed a full-featured e-commerce application integrated with Shopify Storefront GraphQL APIs. Implemented product catalog, wishlist, order history, and dynamic filtering using Riverpod and MVVM Clean Architecture for scalability and maintainability.',
+          'Developed a high-performance e-commerce application integrated with Shopify Storefront GraphQL APIs. Implemented product catalogs, wishlists, and dynamic filtering using Riverpod and MVVM Clean Architecture.',
     },
     {
       'title': 'Observation & Task Management App',
       'description':
-          'Enhanced an offline-first field data collection app with checklist-based observations, dynamic forms, image capture, and network-aware syncing. Utilized Flutter, BLoC/Cubit, Drift, Sembast, and get_it for local persistence and modular Clean Architecture.',
+          'An offline-first field data collection app featuring dynamic forms and network-aware syncing. Utilized Drift and Sembast for local persistence and get_it for dependency injection within a modular Clean Architecture.',
     },
     {
-      'title': 'School Bus Management App',
+      'title': 'School Bus Management & RFID Tracking',
       'description':
-          'Built staff and parent Flutter apps with RFID-based check-in/out, GPS live tracking, and FCM notifications. Integrated Firebase, OpenStreetMap, and Telpo devices to ensure real-time monitoring and student safety, managed via scalable Riverpod state management.',
-    },
-    {
-      'title': 'Multi-role E-commerce Platform',
-      'description':
-          'Developed three role-specific apps (User, Driver, Store) using Flutter, Firebase, Stripe, and Medusa API. Implemented real-time order updates, secure authentication, and responsive UIs using Riverpod and GetX.',
-    },
-    {
-      'title': 'Bookezy – Service Booking App',
-      'description':
-          'Led UI/UX design and implementation for a Flutter app enabling real-time service booking, secure authentication, and profile management through custom REST APIs and Riverpod.',
-    },
-    {
-      'title': 'ShopLite – E-commerce Web App',
-      'description':
-          'Created a responsive web platform using React (Next.js), Vite, Redux, and Firebase. Integrated REST APIs for product and order management and deployed the solution on AWS S3 with modular architecture for maintainability.',
-    },
-    {
-      'title': 'AI-Powered Grammar Correction App',
-      'description':
-          'Designed a multimodal Flutter application leveraging the Gemini API for real-time grammar correction. Integrated speech-to-text, text-to-speech, and camera preview for an immersive, accessible user experience.',
-    },
-    {
-      'title': 'Cross-Platform Chat & Location App',
-      'description':
-          'Developed a feature-rich Flutter chat application with Firebase push notifications, local SQLite storage, and QR-based device token exchange. Added bilingual support (English/Arabic) and geofencing using Google Maps for location-aware interactions.',
+          'Built a dual-app system (Staff/Parent) with RFID-based check-in/out and live GPS tracking. Integrated OpenStreetMap and Telpo hardware devices with Firebase for real-time student safety monitoring.',
     },
     {
       'title': 'Flutter Responsive Kit (Open Source)',
       'description':
-          'Published a Flutter package providing responsive layout helpers and utilities for adaptive UI design across mobile, tablet, and desktop platforms. Focused on developer experience with clean APIs and comprehensive documentation.',
+          'Published a lightweight, extensible Flutter package on pub.dev to streamline adaptive UI construction. Includes utilities like ResponsiveBuilder and ResponsiveGrid, supporting dynamic breakpoints across Mobile, Tablet, and Desktop.',
+    },
+    {
+      'title': 'Multi-role E-commerce & Medusa API',
+      'description':
+          'Engineered a three-tier app ecosystem (User, Driver, Store) using Flutter and Medusa API. Integrated Stripe payments and real-time order tracking with a focus on responsive UI/UX across all device types.',
+    },
+    {
+      'title': 'AI-Powered Grammar Correction App',
+      'description':
+          'Designed a multimodal Flutter application leveraging the Gemini API for real-time grammar correction. Features speech-to-text, text-to-speech, and camera-based text recognition for an immersive user experience.',
     },
   ];
 

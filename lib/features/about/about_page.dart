@@ -40,9 +40,9 @@ class AboutPage extends StatelessWidget {
                       context,
                       title: 'Objective',
                       content:
-                          'Mobile App Developer with 3+ years of experience building cross-platform applications using Flutter and Next.js. '
-                          'Passionate about crafting performant, maintainable, and user-centric digital products following clean architecture principles. '
-                          'Aiming to contribute to scalable, design-driven solutions that blend functionality with seamless UI/UX.',
+                          'Flutter Developer with 3 years of experience building high-quality, scalable cross-platform mobile apps and responsive web applications. '
+                          'Expertise in Clean Architecture, Flutter Bloc, and real-time integrations. Passionate about performance optimization '
+                          'and delivering user-centric digital products in dynamic development environments.',
                     ),
                   ),
 
@@ -64,28 +64,45 @@ class AboutPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text('Experience',
-                            style: theme.textTheme.headlineMedium),
+                            style: theme.textTheme.headlineMedium
+                                ?.copyWith(fontWeight: FontWeight.w500)),
                         const SizedBox(height: 16),
+
+                        // NEW ROLE: INSASOFT
+                        _experienceSection(
+                          context,
+                          title: 'Mobile App Developer – Insasoft Technologies',
+                          duration: 'Oct 2025 – Present',
+                          highlights: [
+                            'Developing "Hub Business Center," a multi-role floor/seat management system using Flutter and Clean Architecture.',
+                            'Implementing complex state handling with Bloc and Chopper-based REST services.',
+                            'Integrating Ably real-time notifications and Firebase push messaging for seamless user updates.',
+                            'Ensuring secure role-based access control across Android, iOS, and Web platforms.',
+                          ],
+                        ),
+
                         _experienceSection(
                           context,
                           title:
                               'Flutter Developer Consultant (Freelance) – CodeScribo Technologies',
-                          duration: 'May 2025 – Sep 2025',
+                          duration: 'May 2025 – Oct 2025',
                           highlights: [
-                            'Developed a full-featured Shopify e-commerce app using Flutter, Riverpod, GraphQL, and Clean Architecture.',
-                            'Enhanced a field Observation & Task Management app with offline-first support using Drift, Sembast, and get_it.',
-                            'Implemented modular architecture and network-aware syncing for robust offline data handling.',
+                            'Improved UI/UX and implemented Bloc state management for "Mr Coach Pro," a fitness platform released on Google Play Store.',
+                            'Added custom reusable components and Firebase messaging for real-time trainer-client alerts.',
+                            'Developed a Shopify e-commerce app using Flutter, Riverpod, and GraphQL.',
+                            'Enhanced field management apps with offline-first support using Drift and Sembast.',
                           ],
                         ),
+
                         _experienceSection(
                           context,
                           title: 'Software Engineer – Perfectz Digital',
                           duration: 'Jan 2023 – Jun 2025',
                           highlights: [
                             'Built multi-role e-commerce, school bus tracking, and booking apps with Flutter and Firebase.',
-                            'Integrated Stripe payments, Google Sign-In, and Medusa APIs for dynamic order and payment flows.',
-                            'Led responsive web app development using React (Next.js), Redux, and Vite with AWS S3 deployment.',
-                            'Collaborated on clean architecture, performance optimization, and real-time notification systems.',
+                            'Integrated Stripe payments, Google Sign-In, and Medusa APIs for dynamic order flows.',
+                            'Led responsive web development using React (Next.js) and Vite with AWS S3 deployment.',
+                            'Collaborated on real-time notification systems and performance optimization.',
                           ],
                         ),
                       ],
@@ -99,7 +116,7 @@ class AboutPage extends StatelessWidget {
                       context,
                       title: 'Open Source & Achievements',
                       content:
-                          '• Published “Flutter Responsive Kit” on pub.dev — a lightweight package for building adaptive Flutter UIs.\n'
+                          '• Published “Flutter Responsive Kit” on pub.dev — a lightweight package for building adaptive UIs across mobile, tablet, and desktop.\n'
                           '• Authored a Medium article on “Certificate Transparency in Flutter: Enhancing App Security”.\n'
                           '• Recognized for client appreciation and rapid delivery of scalable, production-ready features.',
                     ),
@@ -122,7 +139,7 @@ class AboutPage extends StatelessWidget {
       children: [
         Text(title,
             style: theme.textTheme.headlineMedium
-                ?.copyWith(fontWeight: FontWeight.bold)),
+                ?.copyWith(fontWeight: FontWeight.w500)),
         const SizedBox(height: 12),
         Text(content, style: theme.textTheme.bodyMedium?.copyWith(height: 1.5)),
         const SizedBox(height: 32),
