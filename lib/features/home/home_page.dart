@@ -24,7 +24,7 @@ class _HomePageState extends ConsumerState<HomePage>
 
   void _downloadResume() {
     final anchor =
-        AnchorElement(href: 'assets/docs/Amarbabu-T- Flutter Jan.pdf')
+        AnchorElement(href: 'assets/docs/Amarbabu-T-Flutter-august.pdf')
           ..setAttribute('download', 'Amarbabu_Resume.pdf')
           ..click();
   }
@@ -124,7 +124,7 @@ class _HomePageState extends ConsumerState<HomePage>
                 ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 800),
                   child: Text(
-                    'Mobile App Developer | 3+ Years of Experience\n'
+                    'Mobile App Developer | 3 Years and 7 months of Experience\n'
                     'Specialized in Flutter & Dart — focused on building scalable, high-performance mobile apps.\n'
                     'Proficient in BLoC, Riverpod & GetX; experienced with Firebase, REST, and GraphQL APIs.\n'
                     'Also skilled in Next.js and React for modern, responsive web applications.\n'
