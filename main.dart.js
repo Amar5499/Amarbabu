@@ -37929,7 +37929,7 @@ A.xk.prototype={
 a8(){return new A.C5(null,null)}}
 A.C5.prototype={
 a1M(){var s=document.createElement("a")
-s.href="assets/docs/Amarbabu-T- Flutter Jan.pdf"
+s.href="assets/docs/Amarbabu-T-Flutter-august.pdf"
 s.setAttribute("download","Amarbabu_Resume.pdf")
 s.click()},
 au(){var s,r,q,p,o,n
@@ -37961,7 +37961,7 @@ q=A.r5(q.jX(new A.Lz(m,!0,m,p,m,B.e,B.Ik)),m,m)
 p=A.U(a).p2.e
 p=p==null?m:p.mq(B.aL)
 o=A.U(a).p2.w
-return A.Lx(k,s.go,A.fA(A.LM(r,A.M4(A.fB(A.b([q,B.xQ,new A.AR("Hi, I'm Amarbabu T",p,m),B.hp,A.aw9(A.r5(A.vb(new A.dV(B.zs,A.cq("Mobile App Developer | 3+ Years of Experience\nSpecialized in Flutter & Dart \u2014 focused on building scalable, high-performance mobile apps.\nProficient in BLoC, Riverpod & GetX; experienced with Firebase, REST, and GraphQL APIs.\nAlso skilled in Next.js and React for modern, responsive web applications.\nPassionate about clean architecture, performance optimization, and elegant UI/UX design.",m,m,m,o==null?m:o.r9(1.6),B.eH,m),m)),A.bR(4e5,0),m),0.2,A.bR(6e5,0)).jX(new A.AC(A.bR(3e5,0),m,m,m,m)),B.M7,A.r5(A.aw9(A.vb(A.aqZ(B.ys,A.b([n.vn(B.mq,"About",new A.ait(a)),n.vn(B.mo,"Projects",new A.aiu(a)),n.vn(B.Dp,"Skills",new A.aiv(a)),n.vn(B.Dm,"Contact",new A.aiw(a))],j),16,16)),0.3,A.bR(5e5,0)),m,m),B.M8],j),B.aQ,B.a3,B.cx),B.CL)),m,m),new A.r6(B.Dv,B.ir,n.ga1L(),B.bN,!0,B.yz,B.Rp,m))},
+return A.Lx(k,s.go,A.fA(A.LM(r,A.M4(A.fB(A.b([q,B.xQ,new A.AR("Hi, I'm Amarbabu T",p,m),B.hp,A.aw9(A.r5(A.vb(new A.dV(B.zs,A.cq("Mobile App Developer | 3 Years and 7 months of Experience\nSpecialized in Flutter & Dart \u2014 focused on building scalable, high-performance mobile apps.\nProficient in BLoC, Riverpod & GetX; experienced with Firebase, REST, and GraphQL APIs.\nAlso skilled in Next.js and React for modern, responsive web applications.\nPassionate about clean architecture, performance optimization, and elegant UI/UX design.",m,m,m,o==null?m:o.r9(1.6),B.eH,m),m)),A.bR(4e5,0),m),0.2,A.bR(6e5,0)).jX(new A.AC(A.bR(3e5,0),m,m,m,m)),B.M7,A.r5(A.aw9(A.vb(A.aqZ(B.ys,A.b([n.vn(B.mq,"About",new A.ait(a)),n.vn(B.mo,"Projects",new A.aiu(a)),n.vn(B.Dp,"Skills",new A.aiv(a)),n.vn(B.Dm,"Contact",new A.aiw(a))],j),16,16)),0.3,A.bR(5e5,0)),m,m),B.M8],j),B.aQ,B.a3,B.cx),B.CL)),m,m),new A.r6(B.Dv,B.ir,n.ga1L(),B.bN,!0,B.yz,B.Rp,m))},
 vn(a,b,c){var s=null,r=A.IY(a,s,s,22),q=A.cq(b,s,s,s,B.ya,s,s),p=this.c
 p.toString
 return A.atY(r,q,c,A.atZ(s,s,A.U(p).ax.b,s,s,s,s,s,s,B.is,s,s,B.lX,s,new A.cc(A.qt(12),B.p),s,s,s,s))}}
